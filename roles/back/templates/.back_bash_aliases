@@ -396,7 +396,7 @@ function _doormanToken {
     local ip=${1}
     local username=${2}
     local password=${3}
-    token=`curl --silent --header 'Content-Type: application/json' --request POST --data '{"username":"'"${username}"'","password":"'"${password}"'"}' http://${ip}/auth/internal/login | jq -r '.userToken'`
+    token=`curl --silent --header 'Content-Type: application/json' --request POST --data '{"username":"'"${username}"'","password":"'"${password}"'"}' https://${ip}/auth/internal/login | jq -r '.userToken'`
     echo "X-UserToken:${token}"
 }
 
